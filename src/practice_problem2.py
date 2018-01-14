@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Andrew Weger.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -56,6 +56,34 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    seq1 = [1, 2, 3, 4]
+    seq2 = [24, 35, 46, 57]
+    delta1 = 2
+    delta2 = 4
+
+    #Test 1
+    exp = [3, 4, 5, 6]
+    act = practice_problem2a(seq1, delta1)
+    print('Expected: ',exp)
+    print('Actual:   ',act)
+
+    #Test 2
+    exp = [28, 39, 50, 61]
+    act = practice_problem2a(seq2, delta2)
+    print('Expected: ',exp)
+    print('Actual:   ',act)
+
+    #Test 3
+    exp = [5, 6, 7, 8]
+    act = practice_problem2a(seq1, delta2)
+    print('Expected: ',exp)
+    print('Actual:   ',act)
+
+    #Test 4
+    exp = [26, 37, 48, 59]
+    act = practice_problem2a(seq2, delta1)
+    print('Expected: ',exp)
+    print('Actual:   ',act)
 
 def practice_problem2a(sequence, delta):
     """
@@ -76,14 +104,18 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
+    newseq = []
+    for k in range(len(sequence)):
+        new = sequence[k] + delta
+        newseq.append(new)
+    return newseq
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -170,14 +202,22 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    str = ''
+    for k in range(len(sequence)):
+        test = sequence[k]
+        if len(test)==0:
+            pass
+        else:
+            test2 = test[0]
+            str = str + test2
+    return str
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
